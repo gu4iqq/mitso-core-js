@@ -615,9 +615,13 @@
  *   [ 1, 2, 3, 4, 5, 6, 7, 8 ]   =>  [ 5, 6, 7, 8, 1, 2, 3, 4 ]
  *
  */
-function swapHeadAndTail(/* arr */) {
-  throw new Error('Not implemented');
-}
+ function swapHeadAndTail(arr) 
+ {
+   const tail = arr.slice(Math.round(arr.length / 2), arr.length);
+   const head = arr.slice(0, Math.floor(arr.length / 2));
+   const centralElement = arr.slice(arr.length / 2, arr.length / 2 + 1);
+   return arr.length % 2 ? tail.concat(centralElement).concat(head) : tail.concat(head);
+ }
 
 module.exports = {
   findElement,
