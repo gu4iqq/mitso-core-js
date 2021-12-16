@@ -125,8 +125,8 @@
  *     5     => 5
  *     0     => 0
  */
-function getLastDigit(/* value */) {
-  throw new Error('Not implemented');
+ function getLastDigit(value) {
+  return value % 10;
 }
 
 /**
