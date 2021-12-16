@@ -35,9 +35,11 @@
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
-}
+ function generateOdds(len)
+ {
+   const array = new Array(len * 2);
+   return array.fill(1).map((item, i) => i + 1).filter((item) => item % 2);
+ }
 
 /**
  * Returns the doubled array - elements of the specified array
