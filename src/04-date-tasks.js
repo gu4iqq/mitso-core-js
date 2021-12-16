@@ -53,9 +53,10 @@
  *    Date(2012,1,1)    => true
  *    Date(2015,1,1)    => false
  */
-function isLeapYear(/* date */) {
-  throw new Error('Not implemented');
-}
+ function isLeapYear(date) 
+ {
+   return new Date(date.getFullYear(), 1, 29).getMonth() === 1;
+ }
 
 /**
  * Returns the string representation of the timespan between two dates.
