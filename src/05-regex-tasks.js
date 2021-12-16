@@ -52,9 +52,10 @@
  * @return {RegExp}
  *
  */
-function getRegexForPitSpot() {
-  throw new Error('Not implemented');
-}
+ function getRegexForPitSpot() 
+ {
+   return /p.t/;
+ }
 
 /**
  * Returns the password validator regex.
