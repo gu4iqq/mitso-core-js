@@ -260,9 +260,10 @@
  * [ 'a', 'b', 'c' , null ]  => [ "b", null ]
  * [ "a" ] => []
  */
-function getSecondItems(/* arr */) {
-  throw new Error('Not implemented');
-}
+ function getSecondItems(arr) 
+ {
+   return arr.filter((nick, pro) => (pro % 2));
+ }
 
 /**
  * Propagates every item in sequence its position times
