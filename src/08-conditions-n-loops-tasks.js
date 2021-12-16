@@ -252,8 +252,20 @@
  *   87354 => 45378
  *   34143 => 34143
  */
- function reverseInteger(num) {
-  return Number(String(num).split('').reverse().join(''));
+ function isCreditCardNumber(ccn) {
+  const stingCcn = ccn.toString();
+  let sum = 0;
+  for (let i = 0; i < stingCcn.length; i++) {
+    let num = Number(stingCcn[i]);
+    if ((stingCcn.length - i) % 2 === 0) {
+      num *= 2;
+      if (num > 9) {
+        num -= 9;
+      }
+    }
+    sum += num;
+  }
+  return sum % 10 === 0;
 }
 
 /**
