@@ -37,9 +37,9 @@ class PaginationHelper {
   }
 
   // returns the number of pages
-  pageCount() {
-    console.log(this);
-    throw new Error('Not implemented');
+  pageCount() 
+  {
+    return Math.ceil(this.collection.length / this.itemsPerPage);
   }
 
   // returns the number of items on the current page. page_index is zero based.
