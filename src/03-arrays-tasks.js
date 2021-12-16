@@ -543,9 +543,24 @@
  *    "Poland" => ["Lodz"]
  *   }
  */
-function group(/* array, keySelector, valueSelector */) {
-  throw new Error('Not implemented');
-}
+ function group(array, keySelector, valueSelector) 
+ {
+   const resArray = [];
+   const res = new Map();
+ 
+   array.map((item) => {
+     if (resArray[keySelector(item)]) 
+     {
+       resArray[keySelector(item)].push(valueSelector(item));
+     } else 
+     {
+       resArray[keySelector(item)] = [valueSelector(item)];
+     }
+     return item;
+   });
+   array.map((item) => res.set(keySelector(item), resArray[keySelector(item)]));
+   return res;
+ }
 
 /**
  * Projects each element of the specified array to a sequence
