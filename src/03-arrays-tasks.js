@@ -491,9 +491,11 @@
  *     0, 100 => [ 0, 1, 2, ..., 100 ]
  *     3, 3   => [ 3 ]
  */
-function getIntervalArray(/* start, end */) {
-  throw new Error('Not implemented');
-}
+ function getIntervalArray(start, end)
+ {
+   const arr = Array(1 + end - start).fill(0);
+   return arr.map((el, index) => index + start);
+ }
 
 /**
  * Returns array containing only unique values from the specified array.
