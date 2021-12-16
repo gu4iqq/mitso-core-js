@@ -409,9 +409,10 @@ function getDigitalRoot(/* num */) {
  *                         [ 6 ]]
  *
  */
-function getMatrixProduct(/* m1, m2 */) {
-  throw new Error('Not implemented');
-}
+ function getMatrixProduct(m1, m2) 
+ {
+   return m1.map((row) => m2[0].map((x, i) => row.map((num, j) => (m2[j][i] * num)).reduce((acc, val) => acc + val)));
+ }
 
 /**
  * Returns the evaluation of the specified tic-tac-toe position.
