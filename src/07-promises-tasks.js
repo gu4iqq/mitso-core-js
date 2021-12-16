@@ -76,9 +76,10 @@
  *    })
  *
  */
-function getFastestPromise(/* array */) {
-  throw new Error('Not implemented');
-}
+ function getFastestPromise(array) 
+ {
+   return Promise.race(array);
+ }
 
 /**
  * Return Promise object that should be resolved with value that is
