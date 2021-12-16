@@ -336,9 +336,16 @@ function getDigitalRoot(/* num */) {
  *   '{)' = false
  *   '{[(<{[]}>)]}' = true
  */
-function isBracketsBalanced(/* str */) {
-  throw new Error('Not implemented');
-}
+ function isBracketsBalanced(str) 
+ {
+   if (str.length % 2) return false;
+   let stringWithoutRepeats = str;
+   for (let i = 0; i <= str.length / 2; i += 1) 
+   {
+     stringWithoutRepeats = stringWithoutRepeats.replace('[]', '').replace('{}', '').replace('()', '').replace('<>', '');
+   }
+   return stringWithoutRepeats.length === 0;
+ }
 
 /**
  * Returns the string with n-ary (binary, ternary, etc, where n <= 10)
