@@ -204,9 +204,10 @@
  *    +'20,21,22,23,24\n'
  *    +'30,31,32,33,34'
  */
-function toCsvText(/* arr */) {
-  throw new Error('Not implemented');
-}
+ function toCsvText(arr) 
+ {
+   return arr.join('\n');
+ }
 
 /**
  * Transforms the numeric array into the according array of squares:
