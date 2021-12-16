@@ -288,8 +288,13 @@
  *   5436468789016589 => false
  *   4916123456789012 => false
  */
-function isCreditCardNumber(/* ccn */) {
-  throw new Error('Not implemented');
+ function getDigitalRoot(num) {
+  if (num <= 9) 
+  {
+    return num;
+  }
+  const array = String(num).split('');
+  return getDigitalRoot(array.reduce((acc, item) => Number(item) + acc, 0));
 }
 
 /**
