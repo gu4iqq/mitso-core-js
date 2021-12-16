@@ -384,9 +384,12 @@ function getDigitalRoot(/* num */) {
  *   ['/web/assets/style.css', '/.bin/mocha',  '/read.me'] => '/'
  *   ['/web/favicon.ico', '/web-scripts/dump', '/verbalizer/logs'] => '/'
  */
-function getCommonDirectoryPath(/* pathes */) {
-  throw new Error('Not implemented');
-}
+ function getCommonDirectoryPath(pathes) 
+ {
+   const array = pathes.map((x) => x.split('/'));
+   const arrayNew = array[0].map((item, i) => array.map((x) => x[i]));
+   return [...arrayNew.filter((item) => item.every((x) => x === item[0])), ['']].map((x) => x[0]).join('/');
+ }
 
 /**
  * Returns the product of two specified matrixes.
