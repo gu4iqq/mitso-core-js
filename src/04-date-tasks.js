@@ -128,9 +128,36 @@
  *    getDay(365, false) => "December, 31"
  *    getDay(366, true) => "December, 31"
  */
-function getDay(/* day, isLeap */) {
-  throw new Error('Not implemented');
-}
+ function getDay(day, isLeap) 
+ {
+  // console.log(day,isLeap);
+             let days_of_year = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+             let temp = [31,59,90,120,151,181,212,243,273,304,334,365]
+             if(isLeap)
+             {
+                 days_of_year[1] = 29
+                 let temp2 = [31,60,91,121,152,182,213,244,274,305,335,366]
+                 let result = monthDay(day,temp2,days_of_year);
+                 return result
+ 
+                 }else
+                 {
+                     let result = monthDay(day,temp,days_of_year);
+                     return result
+                 }
+ }
+ function monthDay(day,arr,days_of_year){
+   let info = {1:'January',2:'February',3:'March',4:'April',5:'May',6:'June',7:'July',8:'August',9:'September',10:'October',11:'November',12:'December'};
+   for(let i=0;i<12;i++){
+           if(day <=arr[i]){
+               let month = i+1;
+               date = days_of_year[i]-(arr[i] - day);
+               // console.log('month',info[month])
+               // console.log('date',date)
+               return info[month] + ', ' + date
+           }
+       }
+ }
 
 module.exports = {
   parseDataFromRfc2822,
