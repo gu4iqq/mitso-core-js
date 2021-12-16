@@ -367,9 +367,10 @@ function getDigitalRoot(/* num */) {
  *    365, 4  => '11231'
  *    365, 10 => '365'
  */
-function toNaryString(/* num, n */) {
-  throw new Error('Not implemented');
-}
+ function toNaryString(num, n) 
+ {
+   return num.toString(n);
+ }
 
 /**
  * Returns the common directory path for specified array of full filenames.
