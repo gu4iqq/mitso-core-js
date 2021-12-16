@@ -315,9 +315,10 @@
  *   [ null, 1, 'elephant' ] => 1
  *   [ 1, '2' ] => 1
  */
-function getPositivesCount(/* arr */) {
-  throw new Error('Not implemented');
-}
+ function getPositivesCount(arr) 
+ {
+   return arr.filter((x) => typeof x === 'number' && x > 0).length; //X working, but P isnt - rofl?
+ }
 
 /**
  * Sorts digit names
