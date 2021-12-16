@@ -182,9 +182,19 @@
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  throw new Error('Not implemented');
-}
+ function findFirstSingleChar(str) 
+ {
+   const array = str.split('');
+   const mySet = new Set(array);
+   array.forEach((x) => 
+   {
+     if (array.filter((i) => i === x).length > 1) 
+     {
+       mySet.delete(x);
+     }
+   });
+   return mySet.values().next().value;
+ }
 
 /**
  * Returns the string representation of math interval,
