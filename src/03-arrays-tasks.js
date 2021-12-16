@@ -399,9 +399,10 @@
  *    [ null, undefined, null ], null => 2
  *    [ true, 0, 1, 'true' ], true => 1
  */
-function findAllOccurrences(/* arr, item */) {
-  throw new Error('Not implemented');
-}
+ function findAllOccurrences(arr, item) 
+ {
+   return arr.filter((element) => element === item).length;
+ }
 
 /**
  * Concatenates all elements from specified array into single string with ',' delimiter
